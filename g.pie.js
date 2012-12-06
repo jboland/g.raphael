@@ -96,7 +96,7 @@
             }
             
             //values are sorted numerically IFF opts not provided
-            if(!opts.sort){
+            if(opts.sort != false){
              values.sort(function (a, b) {
                  return b.value - a.value;
              });
