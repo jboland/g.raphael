@@ -39,7 +39,9 @@ Raphael.el.popup = function (dir, size, x, y) {
     dir = dir == null ? 'up' : dir;
     size = size || 5;
     bb = this.getBBox();
-    bb.x = bb.x2-bb.width; bb.y = bb.y2-bb.height;
+    
+    //extra line
+    //bb.x = bb.x2-bb.width; bb.y = bb.y2-bb.height;
 
     x = typeof x == 'number' ? x : (center ? bb.x + bb.width / 2 : bb.x);
     y = typeof y == 'number' ? y : (center ? bb.y + bb.height / 2 : bb.y);
@@ -451,7 +453,7 @@ Raphael.fn.popup = function (x, y, text, dir, size) {
     var set = this.set();
 
     text = this.text(x, y, text).attr(Raphael.g.txtattr);
-    return set.push(text.popup(dir, size), text);
+    return set.push(text.popup(dir, size, x, y), text);
 };
 
 /*\
