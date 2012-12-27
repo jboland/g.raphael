@@ -331,7 +331,7 @@ Raphael.el.flag = function (angle, x, y) {
 Raphael.el.label = function () {
     var bb = this.getBBox(),
         paper = this.paper || this[0].paper,
-        r = Math.min(20, bb.width + 10, bb.height + 10) / 2;
+        r = Math.min(10, bb.width + 5, bb.height + 5) / 2;
 
     if (!paper) return;
 
